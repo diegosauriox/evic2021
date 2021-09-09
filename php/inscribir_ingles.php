@@ -27,7 +27,7 @@ $mensaje .="Universidad donde estudia/estudio: " . $universidad . " \r\n";
 $mensaje .="Programa de Pregrado o PostGrado : " . $programa . " \r\n";
 $mensaje .="Pertenece a un Pueblo Originario?:" . $pueblo_originario . "\r\n";
 $mensaje .="Número de Miembro de la IEEE" . $ieee . " \r\n";
-$para= 'hirohans@gmail.com';
+$para= 'evic@ufrontera.cl';
 $asunto= 'Inscripción EVIC';
 
 
