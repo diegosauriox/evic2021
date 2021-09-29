@@ -1,0 +1,235 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	
+	<!-- mobile meta tag -->		
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<title>EVIC 2021</title> 
+	
+	<!-- main style -->
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	
+	<!-- color scheme -->
+	<link rel="stylesheet" type="text/css" href="color-schemes/orange/orange.css" media="screen" />
+	
+	<!--miscellaneous-->
+	<link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/audioplayer.css" media="screen" />	
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" media="screen" />	
+	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen" />	
+	
+	<!-- revolution slider settings -->
+	<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />		
+
+	<!-- responsive stylesheet -->		
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen" />			
+	
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>	
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<!-- jQuery Scripts -->
+	<script type="text/javascript" src="js/modernizr.js"></script>		
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>	
+	<script type="text/javascript" src="js/jquery.parallax.js"></script>
+    <script type="text/javascript">
+        window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+        </script>
+        
+	<script>
+		$(function () {
+		  $('#validar').click(function () {
+            var valores=document.getElementById("email").value
+            $.ajax({
+            url: "php/validarEmail.php",
+            type: "post",
+            data: { email:valores },
+            success: function (data) {
+              if(data==1){
+                  document.getElementById("reclutamiento").style.display="inline";
+              }else{
+                alert("Correo incorrecto o no ingresado")
+                document.getElementById("reclutamiento").style.display="none";
+              }
+            }
+          });
+		  });
+		});
+	</script>
+</head> 
+
+<body> 
+	<!-- preloader-->
+	<div class="whitebg">
+		<div id="spinner"></div>
+	</div>
+
+	<header id="header" class="solid-header">
+		<div class="centered-wrapper">
+		
+			<div class="percent-one-fourth">
+				<div class="logo"><a href="index.html"><img src="images/EVIC_logocolor2.png" alt="" /></a></div>
+			</div><!--end one-fourth-->
+			
+			<a class="nav-btn"><i class="fa fa-bars"></i></a>
+			
+			<div class="percent-three-fourth column-last">					
+				<nav id="navigation">
+					<ul id="mainnav" class="sf-menu">
+						<li class="current"><a href="javascript:void(0)" onclick="window.location.href='#inicio'" ><span>INICIO</span></a></li>
+						<li><a href="javascript:void(0)" onclick="window.location.href='#about'"><span>VOLVER</span></a></li>
+						<li><a class="external" href="index_ingles.html"><span>VERSIÓN INGLÉS</span></a></li>
+					</ul>
+				</nav><!--end navigation-->
+			</div><!--end three-fourth-->
+			<div class="clear"></div>			
+		</div><!--end centered-wrapper-->
+	</header>		
+	
+<div id="wrapper">
+
+	<!-- HELLO SECTION -->
+	
+	<section id="inicio">
+	
+	<!--  menu-fixer class for the header. Should always be present when header is set to "solid-header". Delete it when you use "transparent-header" or "no-header" classes for the header  -->
+	<div class="menu-fixer"></div>
+	
+		<div class="fullscreenbanner-container">
+			<div class="fullscreenbanner">
+				<ul>
+
+					<!-- THE SECOND SLIDE -->
+					<li data-transition="fade" data-slotamount="15" data-masterspeed="300">
+						<img src="images/fondo-01.jpeg" alt="" />
+						
+						<div class="caption tp-resizeme big-text lft ltt"  
+							 data-x="center" 
+							 data-y="center" 
+							 data-speed="300" 
+							 data-start="500" 
+							 data-easing="easeOutExpo">
+							 <h1>EVIC 2021</h1>
+				 			 <div class="fancy-caption" style="width: 500px">
+									<div class="fancy-slider-info">Desde 2004</div>
+									<div class="fancy-slider-caption">Escuela de verano</div> 
+									<div class="fancy-slider-caption">en inteligencia</div>
+									<div class="fancy-slider-caption">computacional</div>
+									<div class="fancy-slider-caption">Incripción gratis</div>
+									<div class="fancy-slider-caption">Transmisión via youtube</div>
+									
+							</div>
+							</div>
+									
+					</li>	
+				</ul>
+            </div>	
+			</div>	
+	
+
+	</section>	
+	<!-- ABOUT SECTION -->
+	
+	
+
+	<section id="inscripcion">
+        <div class="space"></div>
+		<div class="centered-wrapper">
+			<div class="centered-wrapper">	
+			<h1 class="section-title">Formulario de inscripción</h1>	
+			<h1 class="section-tagline">INSCRIPCIÓN GRATIS</h1>
+			<div class="space"></div>
+			
+			<h3><p Align="justify">Para realizar la inscripcion debe llenar el siguiente formulario con sus datos y luego apretar en el boton VALIDAR</h3>
+				<div class="space"></div>
+				
+				<form name="verificar" id="verificar">
+    				<fieldset class="percent-one-half">
+                        
+    					<p><strong>Ingrese el correo con el que se inscribio</strong></p>
+    					<input id="email" type="text" name="email" required />
+                        <button type="button" name="validar"  id="validar" class="button orange" >VALIDAR</button>
+    				</fieldset>		
+				</form>		
+
+			</div><!--end contactform-->
+            
+           <div>
+                <form name="reclutamiento" id="reclutamiento" style="display: none;">
+    				<fieldset class="percent-one-half">
+    					<p><strong>Teléfono de contacto (con código del país)</strong></p>
+    					<div class="percent-one-half">
+                            <input style="float: left;" type="radio" id="fijo" name="fav_language" value="fijo"/>
+                            <label for="fijo"></label>Fijo</label>
+                        </div>
+                        <div class="percent-one-half column-last">
+                            <input style="float: left;" type="radio" id="celular" name="fav_language" value="celular">
+                            <label for="celular">Celular</label>
+                        </div>
+                        <br/>
+                        <br/>
+                        <input type="text" name="numero" id="numero" required/>
+    				</fieldset>		
+                    <fieldset class="percent-one-half column-last">
+                        <br><br>
+                        <p><strong>Situación</strong></p>
+                        <input type="text" name="situacion" id="situacion" required/>
+    				</fieldset>	
+				</form>	
+            </div>
+	</div>
+    </section>
+
+
+	<footer id="footer">		
+		<div id="bottomfooter">		
+			<div class="centered-wrapper">		
+				<div class="percent-two-third">
+					<p>Copyright &copy; 2021 - EVIC2021 | All Rights Reserved</p>
+				</div><!--end one-half-->
+			</div><!--end centered-wrapper-->				
+		</div><!--end bottomfooter-->
+		
+		<a href="#" class="totop"><i class="fa fa-angle-double-up"></i></a>
+		
+	</footer><!--end footer-->	
+	
+</div><!--end wrapper-->
+
+	<!-- JQUERY SCRIPTS -->
+	
+	<script type="text/javascript" src="js/waypoints.min.js"></script>		
+	<script type="text/javascript" src="js/hoverIntent.js"></script>
+	<script type="text/javascript" src="js/superfish.js"></script>
+	<script type="text/javascript" src="twitter/jquery.tweet.min.js"></script>
+	<script type="text/javascript" src="js/jflickrfeed.js"></script>
+	<script type="text/javascript" src="js/jquery.contact.js"></script>
+	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="js/smoothScroll.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+	<script type="text/javascript" src="js/jquery.countTo.js"></script>
+	<script type="text/javascript" src="js/jack-in-the-box.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo.js"></script>	
+	<script type="text/javascript" src="js/jquery.nav.js"></script>
+
+	<!-- ISOTOPE -->
+	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>	
+	<script type="text/javascript" src="js/custom-isotope.js"></script>	
+	
+	<!-- REVOLUTION SLIDER -->
+	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+	<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="js/custom-revolution.js"></script>
+
+	<!-- CUSTOM -->
+	<script type="text/javascript" src="js/custom.js"></script>
+
+</body> 
+</html>
