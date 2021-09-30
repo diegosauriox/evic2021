@@ -2,7 +2,6 @@
 $email=$_POST['email'];
 
 
-
 $connection = mysqli_connect('localhost','root','','evic2021');
 
 if($_POST['email']){
@@ -11,14 +10,12 @@ if($_POST['email']){
 
 	
 	$result = $connection->query($sql);
-    if ($result->num_rows > 0) {
-        // output data of each row
-        
-          echo 1;
-        
-   }else{
-       echo 2;
-   }
+    $row = mysqli_fetch_row($result);
+    if($row){
+        echo 1;
+    }else{
+        echo 2;
+    }
     
 	
 }

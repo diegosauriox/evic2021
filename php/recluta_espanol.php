@@ -1,25 +1,41 @@
 <?php
 $email=$_POST['email'];
-$recluta=$_POST['recluta'];
+$recluta=1;
+$tipo_telefono=$_POST['tipo_telefono'];
 $telefono=$_POST['telefono'];
-$tecnicas=$_POST['tecnicas'];
-$area_aplicacion=$_POST['area_aplicacion'];
+$situacion=$_POST['situacion'];
+$empresa=$_POST['empresa'];
+$tipo_trabajo=$_POST['tipo_trabajo'];
+$habilidades=$_POST['habilidades'];
+
 
 
 //Create connection
 $connection = mysqli_connect('localhost','root','','evic2021');
 
 if($_POST['email']){
-      
-	$q = "UPDATE inscritos SET recluta= '$recluta' telefono ='$telefono' tecnicas ='$tecnicas' area_aplicacion = '$area_aplicacion'  WHERE email='$email";
-
-	$query1 = mysqli_query($connection,$q);
-	$query2 = mysqli_query($connection,$q);
+	 $sql = "SELECT id FROM inscritos WHERE email= '$email'";
+	$result = $connection->query($sql);
+	$row = mysqli_fetch_row($result);
+	 
+	if($row){
+		$sql2 = "UPDATE inscritos SET recluta='$recluta',tipo_telefono='$tipo_telefono',telefono='$telefono',situacion='$situacion',habilidades='$habilidades' WHERE email='$email'";
+		$result2 = $connection->query($sql2);
+		
+		foreach ($empresa as $empresita){
+			foreach ($tipo_trabajo as $regimen){
 	
-	if($query){
-		echo ' Data Inserted Successfully'
-	    mysql_close($connection);
+				$sql3= "INSERT INTO inscritos_has_empresa (inscritos_id, empresa_id, tipo_trabajo_id) VALUES ('$row[0]', '$empresita', '$regimen')";
+				$result3=$connection->query($sql3);
+				
+			}
 		}
+		echo 1;
+	}else{
+		echo 2;
 	}
-
+	
+	
+	
+}
 ?>

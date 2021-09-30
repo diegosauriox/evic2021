@@ -39,20 +39,38 @@
 	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>	
 	<script type="text/javascript" src="js/jquery.parallax.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript">
+        window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+        </script>
 	<script>
 		$(function () {
-		  $('send').click(function () {
-			var data= $('formulario').serialize();
-			console.log(data)
-			/* $.ajax({
-			  url: "./insert.php",
-			  type: "post",
-			  data: { name: name2, email: email2, password: password2, gender: gender2 },
-			  success: function (data) {
-				var dataParsed = JSON.parse(data);
-				console.log(dataParsed);
-			  }
-			}); */
+		  $('#send').click(function () {
+			var datos= $('#formulario').serialize();
+			var email1=document.getElementById("email").value
+			var email2=document.getElementById("email2").value
+			if(email1==email2){
+				$.ajax({
+					url: "php/inscribir_espanol.php",
+					type: "post",
+					data: datos,
+					success: function (data) {
+						
+					if(data==1){
+						alert("Inscripción realizada correctamente")
+					}else{
+						alert("El correo ya se encuentra registrado, intente con otro")
+						
+					}
+					}
+				});
+			}else{
+				alert("Los emails no son iguales, intente de nuevo")
+				
+
+			}
+			
+			
+			
   
 		  });
 		});
@@ -251,11 +269,11 @@
     				</fieldset>
 					<fieldset class="percent-one-third">
     					<p><strong>Apellido Paterno</strong></p>
-    					<input id="aMaterno" type="text" name="aMaterno" required />
+    					<input id="aPaterno" type="text" name="aPaterno" required />
     				</fieldset>
 					<fieldset class="percent-one-third column-last">
-    					<p><strong>Apellido Paterno</strong></p>
-    					<input id="aPaterno" type="text" name="aPaterno" required />
+    					<p><strong>Apellido Materno</strong></p>
+    					<input id="aMaterno" type="text" name="aMaterno" required />
     				</fieldset>
     				<fieldset class="percent-one-half ">
     					<p><strong>País</strong></p>
@@ -285,17 +303,15 @@
 
 					<fieldset class="percent-one-half">
     					<p><strong>Repita el email</strong></p>
-    					<input type="password" name="email2" id="email2" style="width:100%;height: 60px" required/>
+    					<input type="email" name="email2" id="email2"  required/>
     				</fieldset>	
-
-
 
     				<fieldset class="percent-one-half column-last">
     					<p><strong>Actividad</strong></p>
     					<select name="actividad" style="width:100%;height: 60px">
     						<option value="profesional">Profesional</option>
-    						<option value="estudiante_pos">Estudiante posgrado</option>
-							<option value="estudiante_pre">Estudiante pregrado</option>
+    						<option value="estudiante posgrado">Estudiante posgrado</option>
+							<option value="estudiante pregrado">Estudiante pregrado</option>
     					</select>
     				</fieldset>
 	
@@ -317,7 +333,7 @@
     				<fieldset class="percent-one-half column-last">
     					<p><strong>Número de Miembro de la IEEE (Opcional)</strong></p>
     					<input id="ieee" type="text" name="ieee" />
-    					<button type="submit" name="send"  id="send" class="button orange">ENVIAR</button>
+    					<button type="button" name="send"  id="send" class="button orange">ENVIAR</button>
     				</fieldset>				
 				</form>			
 			</div><!--end contactform-->
