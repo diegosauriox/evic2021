@@ -1,4 +1,14 @@
 <?php
+
+
+
+//mysql credencial
+$host='localhost';
+$database='evic2021';
+$user='evic2021';
+$pass='y&YZ!uMQ!6k0';
+
+//post data
 $email=$_POST['email'];
 $recluta=1;
 $tipo_telefono=$_POST['tipo_telefono'];
@@ -10,8 +20,7 @@ $habilidades=$_POST['habilidades'];
 
 
 
-//Create connection
-$connection = mysqli_connect('localhost','root','','evic2021');
+$connection = new mysqli($host,$user,$pass,$database);
 
 if($_POST['email']){
 	 $sql = "SELECT id FROM inscritos WHERE email= '$email'";

@@ -26,6 +26,9 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `empresa`
 --
+CREATE USER 'evic2021'@'localhost' IDENTIFIED BY 'y&YZ!uMQ!6k0';GRANT SELECT, INSERT, UPDATE ON *.* TO 'evic2021'@'localhost' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0; 
+CREATE DATABASE 'evic2021';
+USE 'evic2021';
 
 CREATE TABLE `empresa` (
   `id` int(11) NOT NULL,
