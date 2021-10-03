@@ -56,7 +56,15 @@
 					success: function (data) {
 						
 					if(data==1){
-						alert("Inscripción realizada correctamente")
+						$.ajax({
+							url: "php/becas_espanol.php",
+							type: "post",
+							data: datos,
+							success: function (data) {
+								alert("Inscripción realizada correctamente")
+							}
+						})
+						
 					}else{
 						alert("El correo ya se encuentra registrado, intente con otro")
 						

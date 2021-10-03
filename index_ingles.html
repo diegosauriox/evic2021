@@ -38,7 +38,45 @@
 		<script type="text/javascript" src="js/modernizr.js"></script>		
 		<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>	
 		<script type="text/javascript" src="js/jquery.parallax.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript">
+        window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+        </script>
+	<script>
+		$(function () {
+		  $('#send').click(function () {
+			var datos= $('#formulario').serialize();
+			var email1=document.getElementById("email").value
+			var email2=document.getElementById("email2").value
+			if(email1==email2){
+				$.ajax({
+					url: "php/inscribir_ingles.php",
+					type: "post",
+					data: datos,
+					success: function (data) {
+						alert("Successful registration")
+					if(data==1){
+						$.ajax({
+							url: "php/becas_ingles.php",
+							type: "post",
+							data: datos,
+							success: function (data) {
+								
+							}
+						})
+						
+					}else{
+						alert("The email is already registrated, try with other ")
+						
+					}
+					}
+				});
+			}else{
+				alert("The emails aren't the same, try again")
+			}
+		  });
+		});
+	  </script>
 	</head> 
 
 	<body> 
@@ -64,6 +102,7 @@
 							<li><a href="javascript:void(0)" onclick="window.location.href='#programa'"><span>PROGRAM</span></a></li>
 							<li><a href="javascript:void(0)" onclick="window.location.href='#presentadores'"><span>SPEAKERS</span></a></li>
 							<li><a href="javascript:void(0)" onclick="window.location.href='#inscripcion'"><span>REGISTRATION</span></a></li>	
+							<li><a class="external" href="reclutamiento_ingles.html"><span>RECRUITMENT</span></a></li>
 							<li><a class="external" href="index.html"><span>SPANISH VERSION</span></a></li>
 						</ul>
 					</nav><!--end navigation-->
@@ -223,65 +262,68 @@
 				<h1 class="section-title">Registration form</h1>
 				<h1 class="section-tagline">FREE REGISTER</h1>
 				<div class="space"></div>
-				<h3><p align="justify"> 
+				<h3><p Align="justify"> 
 				 Fill the form with your data and then push SEND button. After this, you will receive an email with the zoom link to the speaks.</h3>
 				<form method="post" action="php/becas_ingles.php" name="formulario" id="formulario">
-							<fieldset class="percent-one-half">
-								<p><strong>Name</strong></p>
+							<fieldset class="percent-one-third">
+								<p><strong>Nombre</strong></p>
 								<input id="nombre" type="text" name="nombre" required />
 							</fieldset>
-							<fieldset class="percent-one-half column-last">
+							<fieldset class="percent-one-third">
+								<p><strong>Last name</strong></p>
+								<input id="aPaterno" type="text" name="aPaterno" required />
+							</fieldset>
+							<fieldset class="percent-one-third column-last">
+								<p><strong>Second last name</strong></p>
+								<input id="aMaterno" type="text" name="aMaterno" required />
+							</fieldset>
+							<fieldset class="percent-one-half ">
 								<p><strong>Country</strong></p>
 								<input id="pais" type="text" name="pais" required />
 							</fieldset>
-							<fieldset class="percent-one-half ">
+							<fieldset class="percent-one-half column-last">
 								<p><strong>City</strong></p>
 								<input id="ciudad" type="text" name="ciudad" required />
 							</fieldset>
+							<fieldset class="percent-one-half" >
+								<p><strong>Address</strong></p>
+								<input type="text" name="direccion" id="direccion" required/>
+							</fieldset>	
 							<fieldset class="percent-one-half column-last">
-								<p><strong>Email address</strong></p>
+								<p><strong>Email</strong></p>
 								<input type="email" name="email" id="email" required />
 							</fieldset>
 							<fieldset class="percent-one-half">
-								<p><strong>Professional?</strong></p>
-								<select name="profesional" style="width:100%;height: 60px">
-									<option value="Yes">Yes</option>
-									<option value="No">No</option>
-								</select>
+								<p><strong>Repeat the Email</strong></p>
+								<input type="email" name="email2" id="email2" required />
 							</fieldset>
 							<fieldset class="percent-one-half column-last">
-								<p><strong>Stundent?</strong></p>
-								<select name="estudiante" style="width:100%;height: 60px">
-									<option value="Yes">Yes</option>
-									<option value="No">No</option>
+								<p><strong>Activity</strong></p>
+								<select name="actividad" style="width:100%;height: 60px">
+									<option value="profesional">Profesional</option>
+									<option value="estudiante posgrado">Undergraduate student</option>
+									<option value="estudiante pregrado">Graduate student</option>
 								</select>
-							</fieldset>			
+							</fieldset>		
 							<fieldset class="percent-one-half">
 								<p><strong>Career</strong></p>
 								<input id="carrera" type="text" name="carrera" required />
 							</fieldset>
 							<fieldset class="percent-one-half column-last">
-								<p><strong>University where study/studied</strong></p>
+								<p><strong>University or Institute where study/studied</strong></p>
 								<input id="universidad" type="text" name="universidad" required />
 							</fieldset>
 							<fieldset class="percent-one-half">
-								<p><strong>Undergraduate or Graduate Program</strong></p>
-								<select name="programa" style="width:100%;height: 60px">
-									<option value="pregrado">Undergraduate</option>
-									<option value="postgrado">Graduate</option>
-								</select>
-							</fieldset>	
-							<fieldset class="percent-one-half column-last">
 								<p><strong>Native People</strong></p>
 								<select name="pueblo_originario" style="width:100%;height: 60px">
-									<option value="Yes">Yes</option>
-									<option value="No">No</option>
+									<option value="Yes">Belong</option>
+									<option value="No">Does not belong</option>
 								</select>
 							</fieldset>
-							<fieldset class="percent-one-half">
+							<fieldset class="percent-one-half  column-last">
 								<p><strong>IEEE Membership Number (optional)</strong></p>
 								<input id="ieee" type="text" name="ieee" />
-								<input type="submit" name="send" value="SEND" id="submit" onclick="alert(' Registration complete, the confirmation of this process was sended to the next email direction: correo@usuario.com')" class="button orange"/>
+								<button type="button" name="send"  id="send" class="button orange">SEND</button>
 							</fieldset>							
 						</form>	
 
