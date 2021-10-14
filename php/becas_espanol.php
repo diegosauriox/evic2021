@@ -1,18 +1,71 @@
 <?php
-$nombre=$_POST['nombre'];
-$aPaterno=$_POST['aPaterno'];
-$aMaterno=$_POST['aMaterno'];
-$pais=$_POST['pais'];
-$region=$_POST['region'];
-$ciudad=$_POST['ciudad'];
-$comuna=$_POST['comuna'];
-$direccion=$_POST['direccion'];
-$email=$_POST['email'];
-$actividad=$_POST['actividad'];
-$carrera=$_POST['carrera'];
-$universidad=$_POST['universidad'];
-$pueblo_originario=$_POST['pueblo_originario'];
-$ieee=$_POST['ieee'];
+
+
+if($_POST['nombre']){
+	$nombre=$_POST['nombre'];
+}else{
+	$nombre="";
+}
+if($_POST['aPaterno']){
+	$aPaterno=$_POST['aPaterno'];
+}else{
+	$aPaterno="";
+}
+if($_POST['aMaterno']){
+	$aMaterno=$_POST['aMaterno'];
+}else{
+	$aMaterno="";
+}
+if($_POST['pais']){
+	$pais=$_POST['pais'];
+}else{
+	$pais="";
+}
+
+}if($_POST['region']){
+	$region=$_POST['region'];
+}else{
+	$region="";
+}
+if($_POST['ciudad']){
+	$ciudad=$_POST['ciudad'];
+}else{
+	$ciudad="";
+
+}if($_POST['comuna']){
+	$comuna=$_POST['comuna'];
+}else{
+	$comuna="";
+}if($_POST['direccion']){
+	$direccion=$_POST['direccion'];
+}else{
+	$direccion="";
+
+}if($_POST['email']){
+	$email=$_POST['email'];
+}else{
+	$email="";
+}if($_POST['actividad']){
+	$actividad=$_POST['actividad'];
+}else{
+	$actividad="";
+}if($_POST['carrera']){
+	$carrera=$_POST['carrera'];
+}else{
+	$carrera="";	
+}if($_POST['universidad']){
+	$universidad=$_POST['universidad'];
+}else{
+	$universidad="";
+}if($_POST['pueblo_originario']){
+	$pueblo_originario=$_POST['pueblo_originario'];
+}else{
+	$pueblo_originario="";
+}if($_POST['ieee']){
+	$ieee=$_POST['ieee'];
+}else{
+	$ieee="";
+
 $nombreCompleto=$nombre." ".$aPaterno." ".$aMaterno;
 
 $header = 'From: ' . $email . " \r\n";
@@ -32,7 +85,7 @@ $mensaje .="Carrera: " . $carrera . " \r\n";
 $mensaje .="Universidad o instituto donde estudia/estudio: " . $universidad . " \r\n";
 $mensaje .="Pertenece a un Pueblo Originario?:" . $pueblo_originario . "\r\n";
 $mensaje .="Número de Miembro de la IEEE" . $ieee . " \r\n";
-$para= 'hirohans@gmail.com';
+$para= 'evic@ufrontera.cl';
 $asunto= 'Inscripción EVIC';
 
 

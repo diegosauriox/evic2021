@@ -56,12 +56,13 @@
 					success: function (data) {
 						
 					if(data==1){
+						alert("Inscripción realizada correctamente")
 						$.ajax({
 							url: "php/becas_espanol.php",
 							type: "post",
 							data: datos,
 							success: function (data) {
-								alert("Inscripción realizada correctamente")
+								
 							}
 						})
 						
@@ -96,7 +97,7 @@
 		<div class="centered-wrapper">
 		
 			<div class="percent-one-fourth">
-				<div class="logo"><a href="index.html"><img src="images/EVIC_logocolor2.png" alt="" /></a></div>
+				<div class="logo"><a href="index.html"><img src="images/logo2021.png" alt="" /></a></div>
 			</div><!--end one-fourth-->
 			
 			<a class="nav-btn"><i class="fa fa-bars"></i></a>
@@ -274,36 +275,36 @@
 				<form name="formulario" id="formulario">
     				<fieldset class="percent-one-third">
     					<p><strong>Nombre</strong></p>
-    					<input id="nombre" type="text" name="nombre" required />
+    					<input id="nombre" value="" type="text" name="nombre" required />
     				</fieldset>
 					<fieldset class="percent-one-third">
     					<p><strong>Apellido Paterno</strong></p>
-    					<input id="aPaterno" type="text" name="aPaterno" required />
+    					<input id="aPaterno" value="" type="text" name="aPaterno" required />
     				</fieldset>
 					<fieldset class="percent-one-third column-last">
     					<p><strong>Apellido Materno</strong></p>
-    					<input id="aMaterno" type="text" name="aMaterno" required />
+    					<input id="aMaterno" value="" type="text" name="aMaterno" required />
     				</fieldset>
     				<fieldset class="percent-one-half ">
     					<p><strong>País</strong></p>
-    					<input id="pais" type="text" name="pais" required/>
+    					<input id="pais" value="" type="text" name="pais" required/>
     				</fieldset>
 					<fieldset class="percent-one-half column-last">
     					<p><strong>Región</strong></p>
-    					<input id="region" type="text" name="region" required/>
+    					<input id="region" value=""  type="text" name="region" required/>
     				</fieldset>
     				<fieldset class="percent-one-half" >
     					<p><strong>Ciudad</strong></p>
-    					<input type="text" name="ciudad" id="ciudad" required/>
+    					<input type="text" value="" name="ciudad" id="ciudad" required/>
     				</fieldset>	
 					<fieldset class="percent-one-half column-last" >
     					<p><strong>Comuna</strong></p>
-    					<input type="text" name="comuna" id="comuna" required/>
+    					<input type="text" value=""  name="comuna" id="comuna" required/>
     				</fieldset>	
 
 					<fieldset class="percent-one-half" >
     					<p><strong>Dirección</strong></p>
-    					<input type="text" name="direccion" id="direccion" required/>
+    					<input type="text" value="" name="direccion" id="direccion" required/>
     				</fieldset>	
     				<fieldset class="percent-one-half column-last">
     					<p><strong>Email</strong></p>
@@ -326,11 +327,11 @@
 	
     				<fieldset class="percent-one-half ">
     					<p><strong>Carrera</strong></p>
-    					<input type="text" name="carrera" id="carrera" required/>
+    					<input type="text" value=""  name="carrera" id="carrera" required/>
     				</fieldset>
     				<fieldset class="percent-one-half column-last">
     					<p><strong>Universidad o Instuto donde estudia/estudio</strong></p>
-    					<input type="text" name="universidad" id="universidad" required/>
+    					<input type="text" value="" name="universidad" id="universidad" required/>
     				</fieldset>
     				<fieldset class="percent-one-half ">
     					<p><strong>Pertenencia a Pueblo Originario</strong></p>
@@ -341,7 +342,7 @@
     				</fieldset>
     				<fieldset class="percent-one-half column-last">
     					<p><strong>Número de Miembro de la IEEE (Opcional)</strong></p>
-    					<input id="ieee" type="text" name="ieee" />
+    					<input id="ieee" value="" type="text" name="ieee" />
     					<button type="button" name="send"  id="send" class="button orange">ENVIAR</button>
     				</fieldset>				
 				</form>			

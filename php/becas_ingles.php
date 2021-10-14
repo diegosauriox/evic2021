@@ -1,30 +1,79 @@
 <?php
-$nombre=$_POST['nombre'];
-$pais=$_POST['pais'];
-$ciudad=$_POST['ciudad'];
-$email=$_POST['email'];
-$profesional=$_POST['profesional'];
-$estudiante=$_POST['estudiante'];
-$carrera=$_POST['carrera'];
-$universidad=$_POST['universidad'];
-$programa=$_POST['programa'];
-$pueblo_originario=$_POST['pueblo_originario'];
-$ieee=$_POST['ieee'];
+
+
+if($_POST['nombre']){
+	$nombre=$_POST['nombre'];
+}else{
+	$nombre="";
+}
+if($_POST['aPaterno']){
+	$aPaterno=$_POST['aPaterno'];
+}else{
+	$aPaterno="";
+}
+if($_POST['aMaterno']){
+	$aMaterno=$_POST['aMaterno'];
+}else{
+	$aMaterno="";
+}
+if($_POST['pais']){
+	$pais=$_POST['pais'];
+}else{
+	$pais="";
+}
+
+if($_POST['ciudad']){
+	$ciudad=$_POST['ciudad'];
+}else{
+	$ciudad="";
+
+}if($_POST['direccion']){
+	$direccion=$_POST['direccion'];
+}else{
+	$direccion="";
+
+}if($_POST['email']){
+	$email=$_POST['email'];
+}else{
+	$email="";
+}if($_POST['actividad']){
+	$actividad=$_POST['actividad'];
+}else{
+	$actividad="";
+}if($_POST['carrera']){
+	$carrera=$_POST['carrera'];
+}else{
+	$carrera="";	
+}if($_POST['universidad']){
+	$universidad=$_POST['universidad'];
+}else{
+	$universidad="";
+}if($_POST['pueblo_originario']){
+	$pueblo_originario=$_POST['pueblo_originario'];
+}else{
+	$pueblo_originario="";
+}if($_POST['ieee']){
+	$ieee=$_POST['ieee'];
+}else{
+	$ieee="";
+
+$nombreCompleto=$nombre." ".$aPaterno." ".$aMaterno;
+
+
 
 $header = 'From: ' . $email . " \r\n";
 $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
 $header .= "Content-Type: text/plain";
 
-$mensaje = "Name:" . $nombre . ",\r\n";
+$mensaje = "Name:" . $nombreCompleto . ",\r\n";
 $mensaje .="Country: " . $pais . " \r\n";
 $mensaje .="City: " . $ciudad . " \r\n";
 $mensaje .="Email: " . $email . " \r\n";
-$mensaje .="Profesional: " . $profesional . " \r\n";
-$mensaje .="Student: " . $estudiante . " \r\n";
+$mensaje .="Address: " . $direccion . " \r\n";
+$mensaje .="Activity: " . $actividad . " \r\n";
 $mensaje .="Carrer: " . $carrera . " \r\n";
-$mensaje .="University where study/studied: " . $universidad . " \r\n";
-$mensaje .="Undergraduate or Graduate Program : " . $programa . " \r\n";
+$mensaje .="University or Instituete where study/studied: " . $universidad . " \r\n";
 $mensaje .="Native People:" . $pueblo_originario . "\r\n";
 $mensaje .="IEEE Membership Number" . $ieee . " \r\n";
 $para= 'evic@ufrontera.cl';
