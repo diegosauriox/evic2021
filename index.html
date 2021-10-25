@@ -54,8 +54,8 @@
 					type: "post",
 					data: datos,
 					success: function (data) {
-						
-					if(data==1){
+						alert(data)
+					/* if(data==1){
 						alert("Inscripción realizada correctamente")
 						$.ajax({
 							url: "php/becas_espanol.php",
@@ -69,7 +69,7 @@
 					}else{
 						alert("El correo ya se encuentra registrado, intente con otro")
 						
-					}
+					} */
 					}
 				});
 			}else{
@@ -248,7 +248,7 @@
 		<div class="double-space"></div>	
 		<div class="centered-wrapper">
 			
-			<h1 class="section-title">KEY SPEAKERS</h1>
+			<h1 class="section-title">ORADORES PRINCIPALES</h1>
 			<div class="space"></div>
 				<div class="centered-wrapper">	
 		
@@ -317,7 +317,7 @@
 		<div class="space"></div>
 			<div class="centered-wrapper">	
 	
-		<h1 class="section-title">TUTORIALS SPEAKERS</h1>
+		<h1 class="section-title">ORADORES DE TUTORIALES</h1>
 		<div class="space"></div>
 				<div class="centered-wrapper">	
 		
@@ -409,7 +409,98 @@
 	</div>
 </section>
 
+<section id="inscripcion">
+	<div class="double-space"></div>
+	<div class="centered-wrapper">
+		<div class="centered-wrapper">	
+		<h1 class="section-title">Formulario de inscripción</h1>	
+		<h1 class="section-tagline">INSCRIPCIÓN GRATIS</h1>
+		<div class="space"></div>
+		<div id="message"></div>
+		<h3><p Align="justify">Para realizar la inscripcion debe llenar el siguiente formulario con sus datos y luego apretar en el boton ENVIAR. Al realizar esto usted recibira un correo donde se indicara el link a la reunion de zoom del congreso.</h3>
+			<div class="space"></div>
+			<div id="message"></div>
+			<form name="formulario" id="formulario">
+				<fieldset class="percent-one-third">
+					<p><strong>Nombre</strong></p>
+					<input id="nombre" value="" type="text" name="nombre" required />
+				</fieldset>
+				<fieldset class="percent-one-third">
+					<p><strong>Apellido Paterno</strong></p>
+					<input id="aPaterno" value="" type="text" name="aPaterno" required />
+				</fieldset>
+				<fieldset class="percent-one-third column-last">
+					<p><strong>Apellido Materno</strong></p>
+					<input id="aMaterno" value="" type="text" name="aMaterno" required />
+				</fieldset>
+				<fieldset class="percent-one-half ">
+					<p><strong>País</strong></p>
+					<input id="pais" value="" type="text" name="pais" required/>
+				</fieldset>
+				<fieldset class="percent-one-half column-last">
+					<p><strong>Región</strong></p>
+					<input id="region" value=""  type="text" name="region" required/>
+				</fieldset>
+				<fieldset class="percent-one-half" >
+					<p><strong>Ciudad</strong></p>
+					<input type="text" value="" name="ciudad" id="ciudad" required/>
+				</fieldset>	
+				<fieldset class="percent-one-half column-last" >
+					<p><strong>Comuna</strong></p>
+					<input type="text" value=""  name="comuna" id="comuna" required/>
+				</fieldset>	
 
+				<fieldset class="percent-one-half" >
+					<p><strong>Dirección</strong></p>
+					<input type="text" value="" name="direccion" id="direccion" required/>
+				</fieldset>	
+				<fieldset class="percent-one-half column-last">
+					<p><strong>Email</strong></p>
+					<input type="email" name="email" id="email" required/>
+				</fieldset>	
+
+				<fieldset class="percent-one-half">
+					<p><strong>Repita el email</strong></p>
+					<input type="email" name="email2" id="email2"  required/>
+				</fieldset>	
+
+				<fieldset class="percent-one-half column-last">
+					<p><strong>Actividad</strong></p>
+					<select name="actividad" style="width:100%;height: 60px">
+						<option value="profesional">Profesional</option>
+						<option value="estudiante posgrado">Estudiante posgrado</option>
+						<option value="estudiante pregrado">Estudiante pregrado</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="percent-one-half ">
+					<p><strong>Carrera</strong></p>
+					<input type="text" value=""  name="carrera" id="carrera" required/>
+				</fieldset>
+				<fieldset class="percent-one-half column-last">
+					<p><strong>Universidad o Instuto donde estudia/estudio</strong></p>
+					<input type="text" value="" name="universidad" id="universidad" required/>
+				</fieldset>
+				<fieldset class="percent-one-half ">
+					<p><strong>Pertenencia a Pueblo Originario</strong></p>
+					<select name="pueblo_originario" style="width:100%;height: 60px">
+						<option value="Si">Pertenece</option>
+						<option value="No">No Pertenece</option>
+					</select>
+				</fieldset>
+				<fieldset class="percent-one-half column-last">
+					<p><strong>Número de Miembro de la IEEE (Opcional)</strong></p>
+					<input id="ieee" value="" type="text" name="ieee" />
+					<button type="button" name="send"  id="send" class="button orange">ENVIAR</button>
+				</fieldset>				
+			</form>			
+		</div><!--end contactform-->
+
+<div class="half-space"></div>
+<div class="one-half">
+	<h3><p><strong>***Cualquier pregunta consultar a: evic@ufrontera.cl</strong></p></h3>
+</div>	
+</section>
 
 	<section id="organizadores" >	
 			
