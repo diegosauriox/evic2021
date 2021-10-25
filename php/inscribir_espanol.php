@@ -31,7 +31,7 @@ if($_POST['email']){
     if (!mysqli_query($connection,$sql)) {
         echo("Error description: " . mysqli_error($connection));
       }else{
-          echo "guardado correcto"
+          echo "guardado correcto";
       }
     
    /*  $result = $connection->query($sql);
