@@ -28,8 +28,15 @@ if($_POST['email']){
 
     $sql = "INSERT INTO inscritos (nombre, pais, region, ciudad, comuna, direccion, email, actividad, carrera, universidad, pueblo_originario, numero_ieee) 
     VALUES ('$nombreCompleto', '$pais', '$region', '$ciudad', '$comuna', '$direccion', '$email', '$actividad', '$carrera', '$universidad', '$pueblo_originario', '$ieee')";
-    $result = $connection->query($sql);
-    echo $result;
+    if (!mysqli_query($connection,$sql)) {
+        echo("Error description: " . mysqli_error($connection));
+      }else{
+          echo "guardado correcto"
+      }
+    
+   /*  $result = $connection->query($sql);
+    echo $result; */
+
     /* 
     if ($result) {
         // output data of each row
