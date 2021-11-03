@@ -6,66 +6,85 @@ if($_POST['nombre']){
 }else{
 	$nombre="";
 }
+
 if($_POST['aPaterno']){
 	$aPaterno=$_POST['aPaterno'];
 }else{
 	$aPaterno="";
 }
+
 if($_POST['aMaterno']){
 	$aMaterno=$_POST['aMaterno'];
 }else{
 	$aMaterno="";
 }
+
 if($_POST['pais']){
 	$pais=$_POST['pais'];
 }else{
 	$pais="";
 }
 
-}if($_POST['region']){
+if($_POST['region']){
 	$region=$_POST['region'];
 }else{
 	$region="";
 }
+
 if($_POST['ciudad']){
 	$ciudad=$_POST['ciudad'];
 }else{
 	$ciudad="";
+}
 
-}if($_POST['comuna']){
+if($_POST['comuna']){
 	$comuna=$_POST['comuna'];
 }else{
 	$comuna="";
-}if($_POST['direccion']){
+}
+
+if($_POST['direccion']){
 	$direccion=$_POST['direccion'];
 }else{
 	$direccion="";
 
-}if($_POST['email']){
+}
+
+if($_POST['email']){
 	$email=$_POST['email'];
 }else{
 	$email="";
-}if($_POST['actividad']){
+}
+
+if($_POST['actividad']){
 	$actividad=$_POST['actividad'];
 }else{
 	$actividad="";
-}if($_POST['carrera']){
+}
+
+if($_POST['carrera']){
 	$carrera=$_POST['carrera'];
 }else{
 	$carrera="";	
-}if($_POST['universidad']){
+}
+
+if($_POST['universidad']){
 	$universidad=$_POST['universidad'];
 }else{
 	$universidad="";
-}if($_POST['pueblo_originario']){
+}
+
+if($_POST['pueblo_originario']){
 	$pueblo_originario=$_POST['pueblo_originario'];
 }else{
 	$pueblo_originario="";
-}if($_POST['ieee']){
+}
+
+if($_POST['ieee']){
 	$ieee=$_POST['ieee'];
 }else{
 	$ieee="";
-
+}
 $nombreCompleto=$nombre." ".$aPaterno." ".$aMaterno;
 
 $header = 'From: ' . $email . " \r\n";
@@ -107,8 +126,4 @@ $mensaje2 .="Equipo EVIC 2021 \r\n";
 
 
 mail($email, $asunto, utf8_decode($mensaje2), $header2);
-
-
-
-header("Location:/index.html#inicio");
 ?>

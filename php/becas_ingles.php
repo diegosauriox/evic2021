@@ -6,16 +6,19 @@ if($_POST['nombre']){
 }else{
 	$nombre="";
 }
+
 if($_POST['aPaterno']){
 	$aPaterno=$_POST['aPaterno'];
 }else{
 	$aPaterno="";
 }
+
 if($_POST['aMaterno']){
 	$aMaterno=$_POST['aMaterno'];
 }else{
 	$aMaterno="";
 }
+
 if($_POST['pais']){
 	$pais=$_POST['pais'];
 }else{
@@ -26,37 +29,50 @@ if($_POST['ciudad']){
 	$ciudad=$_POST['ciudad'];
 }else{
 	$ciudad="";
+}
 
-}if($_POST['direccion']){
+if($_POST['direccion']){
 	$direccion=$_POST['direccion'];
 }else{
 	$direccion="";
 
-}if($_POST['email']){
+}
+
+if($_POST['email']){
 	$email=$_POST['email'];
 }else{
 	$email="";
-}if($_POST['actividad']){
+}
+
+if($_POST['actividad']){
 	$actividad=$_POST['actividad'];
 }else{
 	$actividad="";
-}if($_POST['carrera']){
+}
+
+if($_POST['carrera']){
 	$carrera=$_POST['carrera'];
 }else{
 	$carrera="";	
-}if($_POST['universidad']){
+}
+
+if($_POST['universidad']){
 	$universidad=$_POST['universidad'];
 }else{
 	$universidad="";
-}if($_POST['pueblo_originario']){
+}
+
+if($_POST['pueblo_originario']){
 	$pueblo_originario=$_POST['pueblo_originario'];
 }else{
 	$pueblo_originario="";
-}if($_POST['ieee']){
+}
+
+if($_POST['ieee']){
 	$ieee=$_POST['ieee'];
 }else{
 	$ieee="";
-
+}
 $nombreCompleto=$nombre." ".$aPaterno." ".$aMaterno;
 
 
@@ -99,5 +115,5 @@ $mensaje2 .="Team EVIC2020 \r\n";
 
 mail($email, $asunto, utf8_decode($mensaje2), $header2);
 
-header("Location:/index_ingles.html#inicio");
+
 ?>
