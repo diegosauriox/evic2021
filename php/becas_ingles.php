@@ -104,12 +104,17 @@ $header2 .= "Mime-Version: 1.0 \r\n";
 $header2 .= "Content-Type: text/plain";
 
 $mensaje2 = "Dear (student, sr): \r\n";
-$mensaje2 .="This email is to confirm your registration in the summer school in computational intelligence , version 2020. This event will take place on December 10 and 11 from 10:45 a.m. (GMT -3) and it will be completely virtual via Zoom. To access EVIC 2020 use the following information: \r\n";
-$mensaje2 .="Meeeting ID : 946 8647 7759 \r\n";
-$mensaje2 .="Access code:  619681 \r\n";
-$mensaje2 .="https://zoom.us/j/94686477759?pwd=bVF1VTB1b05TVVhTaUJLQzhuYlovZz09 \r\n";
+$mensaje2 .="This email is to confirm your registration in the summer school in computational intelligence , version 2021 (www.evic.cl). This event will take place on November 04 and 05 and it will be completely virtual via Zoom.  \r\n";
+$mensaje2 .="To access EVIC 2021 use the following information: \r\n";
+$mensaje2 .="Thursday 04 y friday 05 morning: \r\n";
+$mensaje2 .="https://zoom.us/j/95092778156?pwd=OFlxVlAzaDh3N3M0UkRPeWw1NkhRQT09 \r\n";
+$mensaje2 .="Thursday 04 y friday 05 evening (after calendary lunch): \r\n";
+$mensaje2 .="https://zoom.us/j/94465718007?pwd=OTZZSlNGVHo4TjdNaTdrTW1ydm9qdz09\r\n";
+$mensaje2 .="Meeeting ID: 944 6571 8007 \r\n";
+$mensaje2 .="Access code:  evic_2021 \r\n";
+$mensaje2 .="The sessions of thursday and friday morging are alltogether with the Latin American Conference on Computational Intelligence (LA - CCI). for more details about this congress enter to https://fbln.me/lacci/ \r\n";
 $mensaje2 .="very grateful for your interest in participating in this event, greets you \r\n";
-$mensaje2 .="Team EVIC2020 \r\n";
+$mensaje2 .="Team EVIC2021 \r\n";
 
 
 

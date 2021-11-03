@@ -27,14 +27,11 @@ if($_POST['email']){
     $sql = "INSERT INTO inscritos (nombre, pais, ciudad, direccion, email, actividad, carrera, universidad, pueblo_originario, numero_ieee) 
     VALUES ('$nombreCompleto', '$pais', '$ciudad', '$direccion', '$email', '$actividad', '$carrera', '$universidad', '$pueblo_originario', '$ieee')";
     $result = $connection->query($sql);
-    if ($result) {
-        // output data of each row
-        
-        echo 1;
-        
+    if (!mysqli_query($connection,$sql)) {
+        echo("Error: " . mysqli_error($connection). "If the error is not about the email, please send an email to evic@ufrontera.cl about the error");
     }else{
-    echo 2;
-}
+        echo "1";
+    }
      
 }
 

@@ -30,9 +30,9 @@ if($_POST['email']){
     $sql = "INSERT INTO inscritos (nombre, pais, region, ciudad, comuna, direccion, email, actividad, carrera, universidad, pueblo_originario, numero_ieee) 
     VALUES ('$nombreCompleto', '$pais', '$region', '$ciudad', '$comuna', '$direccion', '$email', '$actividad', '$carrera', '$universidad', '$pueblo_originario', '$ieee')";
     if (!mysqli_query($connection,$sql)) {
-        echo("Error description: " . mysqli_error($connection));
+        echo("Error: " . mysqli_error($connection). "Si el error no es por causa del email, por favor mandar correo a evic@ufrotera.cl del error");
       }else{
-          echo "guardado correcto";
+          echo "1";
       }
     
     /* $result = $connection->query($sql);
@@ -43,7 +43,7 @@ if($_POST['email']){
         
     }else{
     echo 2; */
-}
+
      
 }
 
